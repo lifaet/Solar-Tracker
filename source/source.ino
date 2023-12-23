@@ -2,6 +2,7 @@
 // Servo to pin D4
 // LDR 1 to A0
 // LDR 2 to A1
+
 #include <Servo.h>
 #define ldr1 A0
 #define ldr2 A1
