@@ -26,7 +26,7 @@ void loop() {
   if (val1 < lightThreshold && val2 < lightThreshold) {
     pos = 90;
   } else if ((abs(val1 - val2) <= tolerance) || (abs(val2 - val1) <= tolerance)) {
-  } else {
+  } else {                 
     if (val1 > val2) {
       pos = pos + 1;
     }
@@ -34,33 +34,7 @@ void loop() {
       pos = pos - 1;
     }
   }
-
   pos = constrain(pos, 0, 180);
   myservo.write(pos);
   delay(50);
 }
-
-// void loop() {
-//   int val1 = analogRead(ldr1);
-//   int val2 = analogRead(ldr2);
-
-//   if ((abs(val1 - val2) <= tolerance) || (abs(val2 - val1) <= tolerance)) {
-//   } else {
-//     if (val1 > val2) {
-//       pos = pos + 1;
-//     }
-//     if (val1 < val2) {
-//       pos = pos - 1;
-//     }
-//   }
-
-//   if (pos > 180) {
-//     pos = 180;
-//   }
-//   if (pos < 0) {
-//     pos = 0;
-//   }
-//   myservo.write(pos);
-//   delay(50);
-// }
-
